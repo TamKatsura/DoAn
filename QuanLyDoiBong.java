@@ -16,15 +16,20 @@ public class QuanLyDoiBong {
 	public static void main(String[] args) {
 		int luaChon;
 		do {
-			System.out.println("===== QUẢN LÝ ĐỘI BÓNG =====");
-			System.out.println("1. Thêm cầu thủ mới.");
-			System.out.println("2. Hiển thị thông tin cầu thủ.");
-			System.out.println("3. Tìm kiếm cầu thủ theo tên.");
-			System.out.println("4. Xóa cầu thủ.");
-			System.out.println("5. Sắp xếp cầu thủ theo tuổi.");
-			System.out.println("6. Báo cáo tổng số cầu thủ.");
-			System.out.println("0. Thoát.");
+			System.out.println("╔════════════════════════════════════════╗");
+			System.out.println("║          QUẢN LÝ ĐỘI BÓNG              ║");
+			System.out.println("╠══════╦═════════════════════════════════╣");
+			System.out.println("║  1.  ║ Thêm cầu thủ mới.               ║");
+			System.out.println("║  2.  ║ Hiển thị thông tin cầu thủ.     ║");
+			System.out.println("║  3.  ║ Tìm kiếm cầu thủ theo tên.      ║");
+			System.out.println("║  4.  ║ Xóa cầu thủ.                    ║");
+			System.out.println("║  5.  ║ Sắp xếp cầu thủ theo tuổi.      ║");
+			System.out.println("║  6.  ║ Báo cáo tổng số cầu thủ.        ║");
+			System.out.println("║  7.  ║ Thống kê cầu thủ theo quốc tịch.║");
+			System.out.println("║  0.  ║ Thoát.                          ║");
+			System.out.println("╚══════╩═════════════════════════════════╝");
 			System.out.print("Lựa chọn của bạn: ");
+
 			luaChon = scanner.nextInt();
 			switch (luaChon) {
 			case 1:
@@ -45,39 +50,41 @@ public class QuanLyDoiBong {
 			case 6:
 				baoCaoTongSoCauThu();
 				break;
+			case 7:
+				thongKeSoLuongCauThuTheoQuocTich();
+				break;
 			}
 		} while (luaChon != 0);
 	}
 
 	public static void themCauThu() {
-	    System.out.println("Nhập thông tin cầu thủ mới:");
-	    System.out.print("Mã cầu thủ: ");
-	    maCauThu[soLuongCauThu] = scanner.next();
-	    System.out.print("Tên cầu thủ: ");
-	    tenCauThu[soLuongCauThu] = scanner.next();
-	    System.out.print("Tuổi: ");
-	    tuoiCauThu[soLuongCauThu] = scanner.nextInt();
-	    scanner.nextLine(); 
-	    System.out.print("Vị trí: ");
-	    viTri[soLuongCauThu] = scanner.nextLine(); 
-	    System.out.print("Quốc tịch: "); 
-	    quocTich[soLuongCauThu] = scanner.nextLine();
-	    System.out.print("Đội bóng: "); 
-	    doiBong[soLuongCauThu] = scanner.nextLine();
-	    soLuongCauThu++;
-	    System.out.println("Đã thêm cầu thủ mới vào đội bóng!");
+		System.out.println("Nhập thông tin cầu thủ mới:");
+		System.out.print("Mã cầu thủ: ");
+		maCauThu[soLuongCauThu] = scanner.next();
+		System.out.print("Tên cầu thủ: ");
+		tenCauThu[soLuongCauThu] = scanner.next();
+		System.out.print("Tuổi: ");
+		tuoiCauThu[soLuongCauThu] = scanner.nextInt();
+		scanner.nextLine();
+		System.out.print("Vị trí: ");
+		viTri[soLuongCauThu] = scanner.nextLine();
+		System.out.print("Quốc tịch: ");
+		quocTich[soLuongCauThu] = scanner.nextLine();
+		System.out.print("Đội bóng: ");
+		doiBong[soLuongCauThu] = scanner.nextLine();
+		soLuongCauThu++;
+		System.out.println("Đã thêm cầu thủ mới vào đội bóng!");
 	}
 
 	public static void hienThiThongTinCauThu() {
-		System.out.println("Thông tin cầu thủ trong đội bóng:");
-		for (int i = 0; i < soLuongCauThu; i++) {
-			System.out.println("Mã cầu thủ: " + maCauThu[i]);
-			System.out.println("Tên cầu thủ: " + tenCauThu[i]);
-			System.out.println("Tuổi: " + tuoiCauThu[i]);
-			System.out.println("Vị trí: " + viTri[i]);
-			System.out.println("Quốc tịch: " + quocTich[i]);
-			System.out.println("Đội bóng: " + doiBong[i]);
-		}
+	    System.out.println("============ THÔNG TIN CẦU THỦ ===============");
+	    System.out.println("+--------------------------------------------------------------------+");
+	    System.out.println("|" + String.format("%-10s", "MÃ CẦU THỦ") + "|" + String.format("%-30s", "TÊN CẦU THỦ") + "|" + String.format("%-5s", "TUỔI") + "|" + String.format("%-10s", "VỊ TRÍ") + "|" + String.format("%-15s", "QUỐC TỊCH") + "|" + String.format("%-10s", "ĐỘI BÓNG") + "|");
+	    System.out.println("+--------------------------------------------------------------------+");
+	    for (int i = 0; i < soLuongCauThu; i++) {
+	        System.out.println("| " + String.format("%-10s", maCauThu[i]) + "|" + String.format("%-30s", tenCauThu[i]) + "|" + String.format("%-5s", tuoiCauThu[i]) + "|" + String.format("%-10s", viTri[i]) + "|" + String.format("%-15s", quocTich[i]) + "|" + String.format("%-10s", doiBong[i]) + "|");
+	    }
+	    System.out.println("+--------------------------------------------------------------------+");
 	}
 
 	public static void timKiemCauThuTheoTen() {
@@ -130,7 +137,7 @@ public class QuanLyDoiBong {
 		for (int i = 0; i < soLuongCauThu - 1; i++) {
 			for (int j = 0; j < soLuongCauThu - i - 1; j++) {
 				if (tuoiCauThu[j] > tuoiCauThu[j + 1]) {
-					// Hoán đổi thông tin của cầu thủ
+
 					String tempMaCauThu = maCauThu[j];
 					maCauThu[j] = maCauThu[j + 1];
 					maCauThu[j + 1] = tempMaCauThu;
@@ -172,5 +179,31 @@ public class QuanLyDoiBong {
 
 	public static void baoCaoTongSoCauThu() {
 		System.out.println("Tổng số cầu thủ trong đội bóng: " + soLuongCauThu);
+	}
+
+	public static void thongKeSoLuongCauThuTheoQuocTich() {
+
+		int[] demCauThuTheoQuocTich = new int[soLuongCauThu];
+
+		for (int i = 0; i < soLuongCauThu; i++) {
+			boolean daTonTaiQuocTich = false;
+			for (int j = 0; j < i; j++) {
+				if (quocTich[i].equals(quocTich[j])) {
+					demCauThuTheoQuocTich[j]++;
+					daTonTaiQuocTich = true;
+					break;
+				}
+			}
+			if (!daTonTaiQuocTich) {
+				demCauThuTheoQuocTich[i] = 1;
+			}
+		}
+
+		System.out.println("Thống kê số lượng cầu thủ theo quốc tịch:");
+		for (int i = 0; i < soLuongCauThu; i++) {
+			if (demCauThuTheoQuocTich[i] > 0) {
+				System.out.println(quocTich[i] + ": " + demCauThuTheoQuocTich[i]);
+			}
+		}
 	}
 }
