@@ -71,7 +71,7 @@ public class QuanLyDoiBong {
 		System.out.println("║  6.  ║ Báo cáo tổng số cầu thủ.        ║");
 		System.out.println("║  7.  ║ Thống kê cầu thủ theo quốc tịch.║");
 		System.out.println("║  8.  ║ Đọc từ file.                    ║");
-		System.out.println("║  9.  ║ Ghi ra file.                   ║");
+		System.out.println("║  9.  ║ Ghi ra file.                    ║");
 		System.out.println("║ 10.  ║ Chỉnh sửa thông tin cầu thủ.    ║");
 		System.out.println("║  0.  ║ Thoát.                          ║");
 		System.out.println("╚══════╩═════════════════════════════════╝");
